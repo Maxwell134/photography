@@ -21,7 +21,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 5px;
-    /* z-index: -1;  */
+    z-index: 1; 
     /* Bring the navigation bar behind other content */
     background-color:rgb(64, 59, 59); 
     /* Set the background color to transparent */
@@ -111,7 +111,33 @@ body {
     
     
   }
+
+ /* Adjust layout for smaller screens: Images displayed in a single column */
+@media (max-width: 768px) {
+  .photo-container {
+    width: 100%;
+    flex-direction: column; /* Change flex-direction to column */
+    align-items: center; /* Center-align items */
+  }
+
+  .photo {
+    margin: 20px 0; /* Add margin between images */
+  }
+
+  .photo img {
+    width: 80%; /* Adjust width of images */
+    height: auto; /* Allow height to adjust automatically */
+
+  }
+
+ 
+}
   
+@media (max-width: 768px) {
+  .photo img:hover {
+    transform: none; /* Override hover effect */
+  }
+}
   .photo img:hover {
     transform: scale(1.1);
   }
@@ -132,3 +158,31 @@ body {
     border-radius: 10px;
   }
   
+ /* Styles for social icons */
+.social-icons {
+  position: fixed;
+  bottom: 200px;
+  /* right: 1px; */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a {
+  margin-bottom: 10px;
+}
+
+.social-icons img
+{
+
+  width: 50px;
+  border-radius: 50%;
+}
+  
+.social-icons a:hover {
+  transform: scale(1.1);
+} 
+
+/* image customization as per the resolution */
+/* Default image size */
+
